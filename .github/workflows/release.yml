@@ -10,6 +10,7 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
-      - run: apt update && apt install python3-setuptools
+      - run: sudo apt-get update 
+      - run: sudo apt-get install python3-setuptools
       - run: pip3 install niet
         
