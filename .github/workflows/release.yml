@@ -7,10 +7,15 @@ name: Create Release
 
 jobs:
   build:
-    name: Create Release
+    name: Build Release
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get update 
-      - run: sudo apt-get install python3-setuptools
+      - run: sudo apt-get install python3-setuptools python3-wheel
       - run: pip3 install niet
-        
+      - run: >
+          docker build
+              --build-arg "munge_version=$( niet munge_version defs.yaml )" 
+              --build-arg "slurm_version=$( niet slurm_version defs.yaml )" 
+              .
+      
