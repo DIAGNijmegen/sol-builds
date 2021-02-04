@@ -12,7 +12,7 @@ jobs:
     steps:
       - run: sudo apt-get update 
       - run: sudo apt-get install python3-setuptools python3-wheel
-      - run: pip3 install niet
+      - run: sudo pip3 install niet
       - run: |
           docker build \
               --build-arg "munge_version=$( niet munge_version defs.yaml )" \
