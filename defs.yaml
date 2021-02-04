@@ -1,4 +1,4 @@
-dockerbase: ubuntu:18.04
+dockerbase: ubuntu:20.04
 munge_version: 0.5.13
 slurm_version: 19-05-7-1
 
