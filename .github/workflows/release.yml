@@ -10,11 +10,14 @@ jobs:
     name: Build Release
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get update 
-      - run: sudo apt-get install python3-setuptools python3-wheel
-      - run: sudo pip3 install niet
-      - run: ls
-      - run: |
+      - name: Install thinks to install dependencies
+        run: sudo apt-get update && sudo apt-get install python3-setuptools python3-wheel
+      - name: Install 'niet'
+        run: sudo pip3 install niet
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run build
+        run: |
           docker build \
               --build-arg "munge_version=$( niet munge_version defs.yaml )" \
               --build-arg "slurm_version=$( niet slurm_version defs.yaml )" \
