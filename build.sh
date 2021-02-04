@@ -15,7 +15,7 @@ docker run -t --rm --workdir=/opt -v $PWD/export:/export:rw build \
 docker run -t --rm --workdir=/opt -v $PWD/export:/export:rw build \
   tar cfz /export/slurm.tar.gz slurm &
 wait
-docker run -it --rm --workdir=/opt -v $PWD/export:/export:rw build \
+docker run -t --rm --workdir=/opt -v $PWD/export:/export:rw build \
   chmod -R 777 /export/
 
 
