@@ -4,6 +4,7 @@ set -e
 
 docker build \
   --tag build \
+  --build-arg "dockerbase=$( niet dockerbase defs.yaml )" \
   --build-arg "munge_version=$( niet munge_version defs.yaml )" \
   --build-arg "slurm_version=$( niet slurm_version defs.yaml )" \
   .

@@ -1,4 +1,5 @@
-FROM ubuntu:18.04
+ARG dockerbase
+FROM $dockerbase
 
 RUN apt-get update && apt-get install -y gcc git make gzip libgcrypt20-dev python libmariadbclient-dev
 
