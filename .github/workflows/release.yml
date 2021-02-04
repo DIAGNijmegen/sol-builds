@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: sudo apt-get update 
-      - run: sudo apt-get install python3-setuptools
+      - run: sudo apt-get install python3-setuptools python3-wheel
       - run: pip3 install niet
         
